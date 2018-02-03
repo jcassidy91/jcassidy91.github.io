@@ -1,0 +1,32 @@
+body {
+    text-align: center
+}
+
+#display {
+    width: 75%;
+    margin: auto;
+    margin-bottom: -96px;
+}
+
+#dragon {
+    display: inline-block;
+    vertical-align: top;
+    width: 285px;
+}
+
+#dragon img {
+    image-rendering: pixelated;
+    width: 100%;
+}
+
+#stats {
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid black;
+    width: 285px;
+}
+
+#stats ul{
+    list-style: none;
+    text-align: left;
+}
