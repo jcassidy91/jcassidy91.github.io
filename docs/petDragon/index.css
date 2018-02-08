@@ -5,7 +5,6 @@ body {
 #display {
     width: 75%;
     margin: auto;
-    margin-bottom: -96px;
 }
 
 #dragon {
@@ -20,8 +19,7 @@ body {
 }
 
 #stats {
-    display: inline-block;
-    vertical-align: top;
+    float: right;
     border: 1px solid black;
     width: 285px;
 }

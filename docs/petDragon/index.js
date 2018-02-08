@@ -11,10 +11,17 @@ firebase.initializeApp(config);
 var myDragon = {};
 var database = firebase.database()
 var db = database.ref("myDragon");
-db.on("value", getStats);
 
 function feed(amount) {
     database.ref().update({"myDragon/food": myDragon.food + amount})
+}
+
+db.on("value", getStats);
+function getStats(e) {
+    myDragon = e.val();
+    $('#food').html(myDragon.food);
+    $('#mood').html(myDragon.mood);
+    $('#name').html(myDragon.name);
 }
 
 checkHunger();
@@ -25,11 +32,4 @@ function checkHunger() {
         database.ref().update({"myDragon/timeSinceHunger": new Date().getTime()/1000})
     }
     window.requestAnimationFrame(checkHunger);
-}
-
-function getStats(e) {
-    myDragon = e.val();
-    $('#food').html(myDragon.food);
-    $('#mood').html(myDragon.mood);
-    $('#name').html(myDragon.name);
 }
